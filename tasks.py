@@ -2,7 +2,7 @@ from crewai import Task
 from tools import yt_tool
 from agents import blog_researcher,blog_writer
 
-## Research Task
+#Research Task
 research_task = Task(
   description=(
     "Identify the video {topic}."
@@ -13,7 +13,7 @@ research_task = Task(
   agent=blog_researcher,
 )
 
-# Writing task with language model configuration
+#Writing task 
 write_task = Task(
   description=(
     "get the info from the youtube channel on the topic {topic}."
@@ -22,5 +22,5 @@ write_task = Task(
   tools=[yt_tool],
   agent=blog_writer,
   async_execution=False,
-  output_file='new-blog-post.md'  # Example of output customization
+  output_file='new-blog-post.md'  
 )
